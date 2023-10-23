@@ -3,9 +3,10 @@
     <style name="Base.Theme.Techophile1" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="android:windowIsTranslucent">true</item>
+<!--        <item name="android:windowIsTranslucent">true</item>-->
         <!-- Force disable dark mode -->
         <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
     <style name="Theme.Techophile1" parent="Base.Theme.Techophile1" />
