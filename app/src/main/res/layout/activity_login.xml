@@ -11,11 +11,10 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoBg"
         android:layout_width="136dp"
         android:layout_height="139dp"
         app:srcCompat="@drawable/app_logo"
-        android:transitionName="logo_trans"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="2dp" />
 
@@ -33,11 +32,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:transitionName="app_trans"
         android:fontFamily="@font/aclonica"
         android:text="Welcome To TechoPhile"
+        android:shadowColor="@color/lightBlue2"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="9"
         android:textColor="@color/lightBlue2"
-        android:textSize="20sp" />
+        android:textSize="22sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,8 +79,7 @@
             app:counterTextColor="@color/lightBlue"
             app:hintTextColor="@color/lightBlue"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/lightBlue"
-            >
+            app:endIconTint="@color/lightBlue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -114,6 +115,7 @@
             android:backgroundTint="#00000000"
             android:fontFamily="@font/aclonica"
             android:gravity="center"
+            android:textColor="@color/lightBlue2"
             android:text="Create Account"
             app:cornerRadius="7dp"
             app:strokeColor="#2196F3"

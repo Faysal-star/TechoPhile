@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.transition.Fade;
+import android.transition.Transition;
 import android.util.Pair;
 import android.view.View;
 import android.view.animation.Animation;
@@ -58,19 +60,19 @@ public class Splash extends AppCompatActivity {
 
         avd.start();
 
+        // Fade transition
+//        Transition fade = new Fade();
+//        fade.excludeTarget(android.R.id.statusBarBackground , true);
+//        fade.excludeTarget(android.R.id.navigationBarBackground , true);
+//        getWindow().setEnterTransition(fade);
+//        getWindow().setExitTransition(fade);
+
         // splash screen load
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new android.content.Intent(Splash.this, Login.class);
-//                startActivity(intent);
-//                finish();
-                Pair[] anims = new Pair[2] ;
-                anims[0] = new Pair<View, String>(draw , "logo_trans");
-                anims[1] = new Pair<View, String>(logo , "app_trans");
-
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Splash.this , anims);
-                startActivity(intent , options.toBundle());
+                startActivity(intent);
                 finish();
             }
         }, 4000);
