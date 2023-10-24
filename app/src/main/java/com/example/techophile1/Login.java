@@ -27,11 +27,13 @@ public class Login extends AppCompatActivity {
     private TextView welcome , hola ;
     private ImageView logoBg;
     private FirebaseAuth mAuth;
+    private CProgress cProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getWindow().setStatusBarColor(ContextCompat.getColor(this , R.color.startColor));
+        cProgress = new CProgress(Login.this);
         // Fade transition
 //        Transition fade = new Fade();
 //        fade.excludeTarget(android.R.id.statusBarBackground , true);
@@ -62,19 +64,23 @@ public class Login extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                cProgress.show();
                 //Toast.makeText(Login.this, email.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
                  String mail = email.getEditText().getText().toString();
                  String password = pass.getEditText().getText().toString();
                     if(mail.isEmpty() || password.isEmpty()) {
+                        cProgress.cancel();
                         Toast.makeText(Login.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                     }else{
                         mAuth.signInWithEmailAndPassword(mail , password).addOnCompleteListener(Login.this , task -> {
                             if(task.isSuccessful()){
                                 Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(Login.this , MainActivity.class);
+                                cProgress.cancel();
                                 startActivity(intent);
                                 finish();
                             }else{
+                                cProgress.cancel();
                                 Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });

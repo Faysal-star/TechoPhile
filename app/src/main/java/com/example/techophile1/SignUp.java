@@ -45,6 +45,7 @@ public class SignUp extends AppCompatActivity {
     private FirebaseStorage storage;
     private Uri imageUri;
     private String imageUriStr;
+    private CProgress cProgress;
 
     private String emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @Override
@@ -53,6 +54,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         getWindow().setStatusBarColor(ContextCompat.getColor(this , R.color.startColor));
 
+        cProgress = new CProgress(SignUp.this);
         // Firebase
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
@@ -135,6 +137,7 @@ public class SignUp extends AppCompatActivity {
                     pass.setErrorEnabled(false);
                     rpass.setErrorEnabled(false);
                 }else{
+                    cProgress.show();
                     email.setErrorEnabled(false);
                     pass.setErrorEnabled(false);
                     rpass.setErrorEnabled(false);
@@ -161,9 +164,11 @@ public class SignUp extends AppCompatActivity {
                                                             if(task.isSuccessful()){
                                                                 Toast.makeText(SignUp.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
                                                                 Intent intent = new Intent(SignUp.this , Login.class);
+                                                                cProgress.cancel();
                                                                 startActivity(intent);
                                                                 finish();
                                                             }else{
+                                                                cProgress.cancel();
                                                                 Toast.makeText(SignUp.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                                             }
                                                         }
@@ -171,12 +176,14 @@ public class SignUp extends AppCompatActivity {
                                                 }
                                             });
                                         }else{
+                                            cProgress.cancel();
                                             Toast.makeText(SignUp.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
 
                             }else{
+                                cProgress.cancel();
                                 Toast.makeText(SignUp.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
