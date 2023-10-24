@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginStart="10dp"
-            android:transitionName="hola_trans"
             >
             <TextView
                 android:id="@+id/hola"
@@ -35,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
                 android:text="@string/start"
+                android:transitionName="hola_trans"
                 android:textColor="@color/lightBlue2"
                 android:textSize="25sp"
                 android:gravity="center"/>

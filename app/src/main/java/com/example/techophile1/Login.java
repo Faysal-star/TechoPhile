@@ -18,13 +18,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
-    TextInputLayout email , pass ;
-    Button loginBtn , regBtn;
-    Animation right , left , top;
-    TextView welcome , hola ;
-    ImageView logoBg;
+    private TextInputLayout email , pass ;
+    private Button loginBtn , regBtn;
+    private Animation right , left , top;
+    private TextView welcome , hola ;
+    private ImageView logoBg;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,7 @@ public class Login extends AppCompatActivity {
 //        fade.excludeTarget(android.R.id.navigationBarBackground , true);
 //        getWindow().setEnterTransition(fade);
 //        getWindow().setExitTransition(fade);
-
+        mAuth = FirebaseAuth.getInstance();
         email = findViewById(R.id.email);
         pass = findViewById(R.id.pass);
         loginBtn = findViewById(R.id.login);
@@ -60,7 +62,23 @@ public class Login extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Login.this, email.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Login.this, email.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                 String mail = email.getEditText().getText().toString();
+                 String password = pass.getEditText().getText().toString();
+                    if(mail.isEmpty() || password.isEmpty()) {
+                        Toast.makeText(Login.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
+                    }else{
+                        mAuth.signInWithEmailAndPassword(mail , password).addOnCompleteListener(Login.this , task -> {
+                            if(task.isSuccessful()){
+                                Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(Login.this , MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }else{
+                                Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
             }
         });
         regBtn.setOnClickListener(new View.OnClickListener() {
