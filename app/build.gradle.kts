@@ -43,4 +43,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.github.ybq:Android-SpinKit:1.4.0")
+    implementation("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.22")
+
 }

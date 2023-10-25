@@ -6,6 +6,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="colorPrimaryDark">@color/endColor</item>
         <item name="android:windowBackground">@drawable/gradient_blue</item>
     </style>
 </resources>
