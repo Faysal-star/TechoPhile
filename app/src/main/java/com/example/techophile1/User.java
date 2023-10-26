@@ -1,9 +1,9 @@
 package com.example.techophile1;
 
 public class User {
-    String profilePic , userName , mail , dob , pass , role , userID , lastMsg , status ;
+    String profilePic , userName , mail , dob , pass , role , userID , lastMsg , status , learning , teaching ;
 
-    public User(String profilePic, String userName, String mail, String dob, String pass, String role, String userID, String lastMsg, String status) {
+    public User(String profilePic, String userName, String mail, String dob, String pass, String role, String userID, String lastMsg, String status, String learning, String teaching) {
         this.profilePic = profilePic;
         this.userName = userName;
         this.mail = mail;
@@ -13,9 +13,12 @@ public class User {
         this.userID = userID;
         this.lastMsg = lastMsg;
         this.status = status;
+        this.learning = learning;
+        this.teaching = teaching;
     }
 
-    public User(){}
+    public User() {
+    }
 
     public String getProfilePic() {
         return profilePic;
@@ -87,5 +90,21 @@ public class User {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getLearning() {
+        return learning;
+    }
+
+    public void setLearning(String learning) {
+        this.learning = learning;
+    }
+
+    public String getTeaching() {
+        return teaching;
+    }
+
+    public void setTeaching(String teaching) {
+        this.teaching = teaching;
     }
 }

@@ -156,8 +156,8 @@ public class SignUp extends AppCompatActivity {
                                                 @Override
                                                 public void onSuccess(Uri uri) {
                                                     imageUriStr = uri.toString();
-                                                    // User(String profilePic, String userName, String mail, String dob, String pass, String role, String userID, String lastMsg, String status)
-                                                    User user = new User(imageUriStr , userNameStr , emailStr , dobStr , passStr , "0" , userIDStr , "null" , "offline");
+                                                    // User(String profilePic, String userName, String mail, String dob, String pass, String role, String userID, String lastMsg, String status , l , t)
+                                                    User user = new User(imageUriStr , userNameStr , emailStr , dobStr , passStr , "0" , userIDStr , "null" , "offline", "null" , "null");
                                                     root.setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                         @Override
                                                         public void onComplete(@NonNull Task<Void> task) {

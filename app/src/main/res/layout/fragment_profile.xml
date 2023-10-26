@@ -11,21 +11,173 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
     >
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            >
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/hexx"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
-                app:shapeAppearanceOverlay="@style/bottomRoundCorner"
-                />
+            android:background="@drawable/hex_corner">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/pro_pc"
+                app:civ_border_color="@color/lightBlue"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.121"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="165dp"
+                android:layout_height="32dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.259"
+                app:layout_constraintStart_toEndOf="@+id/profilePic"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.344" />
+
+            <TextView
+                android:id="@+id/profileEmail"
+                android:layout_width="166dp"
+                android:layout_height="26dp"
+                android:fontFamily="serif-monospace"
+                android:text="Email"
+                android:textColor="#aaFFFFFF"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.252"
+                app:layout_constraintStart_toEndOf="@+id/profilePic"
+                app:layout_constraintTop_toBottomOf="@+id/profileName"
+                app:layout_constraintVertical_bias="0.042" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bday_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintStart_toEndOf="@+id/profilePic"
+                app:layout_constraintTop_toBottomOf="@+id/profileEmail"
+                app:layout_constraintVertical_bias="0.085"
+                app:tint="@color/lightBlue2" />
+
+            <TextView
+                android:id="@+id/profileBday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+                android:text="Birthday"
+                android:textColor="@color/lightBlue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.056"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/profileEmail"
+                app:layout_constraintVertical_bias="0.125" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/teachings"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="My Teaching"
+            android:paddingTop="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="10dp"
+            android:textColorHint="@color/endColor"
+            app:boxStrokeColor="@color/lightBlue"
+            app:boxStrokeWidthFocused="2dp"
+            app:counterTextColor="@color/lightBlue2"
+            app:hintTextColor="@color/endColor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/learnings"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="My Learning"
+            android:paddingTop="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginHorizontal="10dp"
+            android:textColorHint="@color/endColor"
+            app:boxStrokeColor="@color/lightBlue"
+            app:boxStrokeWidthFocused="2dp"
+            app:counterTextColor="@color/lightBlue2"
+            app:hintTextColor="@color/endColor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/lightBlue"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/aclonica"
+            android:text="Update"
+            app:cornerRadius="7dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="25dp">
+            <Button
+                android:id="@+id/signOut"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:backgroundTint="@color/lightBlue"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Sign Out"
+                app:cornerRadius="7dp" />
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/lightBlue"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Delete Account"
+                app:cornerRadius="7dp" />
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
