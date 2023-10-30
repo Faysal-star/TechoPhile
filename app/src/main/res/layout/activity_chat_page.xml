@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBlue3"
+    tools:context=".chat_page">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/endColor"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/llout">
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="0dp"
+            android:layout_weight=".1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_small"
+            android:layout_gravity="center_vertical"
+            app:tint="@color/white" />
+        <TextView
+            android:id="@+id/receiverName"
+            android:layout_width="0dp"
+            android:layout_weight=".8"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/grand_hotel"
+            />
+        <ImageView
+            android:id="@+id/infoBtn"
+            android:layout_width="0dp"
+            android:layout_weight=".1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/info_small"
+            android:layout_gravity="center_vertical"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llout"
+        android:id="@+id/msgList" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="348dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/white"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Type a message..."
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:id="@+id/msgBox"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            app:cardBackgroundColor="#00000000"
+            app:cardElevation="0dp"
+            android:id="@+id/sendBtn"
+            android:background="#00000000"
+            >
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/telegram"
+                android:layout_gravity="center"
+                app:tint="@color/endColor"
+                />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</RelativeLayout>

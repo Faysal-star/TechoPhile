@@ -1,6 +1,7 @@
 package com.example.techophile1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,17 @@ public class UserCollection extends RecyclerView.Adapter<UserCollection.ViewHold
         holder.user_name.setText(user.getUserName());
         holder.user_teaching.setText(user.getTeaching());
         Picasso.get().load(user.getProfilePic()).into(holder.user_pic);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,chat_page.class);
+                intent.putExtra("useriName",user.getUserName());
+                intent.putExtra("useriId",user.getUserID());
+                intent.putExtra("useriPic",user.getProfilePic());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
