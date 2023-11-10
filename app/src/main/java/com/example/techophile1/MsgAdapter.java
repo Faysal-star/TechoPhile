@@ -79,6 +79,4 @@ public class MsgAdapter extends RecyclerView.Adapter{
             mssg = itemView.findViewById(R.id.receiverTxt);
         }
     }
-
-
 }

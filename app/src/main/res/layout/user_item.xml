@@ -2,31 +2,35 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#C2D9FF"
-    android:layout_marginTop="10dp"
-    >
+    android:layout_marginTop="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/user_pic"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/pro_pc" />
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/pro_pc"
+            app:civ_border_color="@color/startColor"
+            app:civ_border_width="1dp"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="10dp"
             android:gravity="center_vertical"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             >
 
             <TextView
@@ -37,7 +41,7 @@
                 android:text="Name"
                 android:textColor="#000000"
                 android:textFontWeight="300"
-                android:textSize="20sp" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/user_teaching"
@@ -46,7 +50,7 @@
                 android:fontFamily="@font/fira_code_medium"
                 android:text="Teaching"
                 android:textColor="@color/lightBlue"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
 

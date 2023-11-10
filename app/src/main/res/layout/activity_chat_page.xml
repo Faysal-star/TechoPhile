@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBlue3"
+    android:background="@drawable/blue_tool"
     tools:context=".chat_page">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/endColor"
+        android:background="#D00B1232"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_gravity="center_vertical"
@@ -43,15 +43,23 @@
             app:tint="@color/white" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/llout"
-        android:padding="5dp"
-        android:id="@+id/msgList" />
+        android:layout_above="@+id/bll">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/msgList" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:id="@+id/bll"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal"
@@ -92,7 +100,7 @@
                 android:layout_height="25dp"
                 android:src="@drawable/telegram"
                 android:layout_gravity="center"
-                app:tint="@color/endColor"
+                app:tint="@color/lightBlue3"
                 />
         </androidx.cardview.widget.CardView>
 
