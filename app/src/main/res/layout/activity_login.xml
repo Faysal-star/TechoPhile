@@ -25,9 +25,9 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/aclonica"
         android:text="Konnichiwa,"
-        android:transitionName="hola_trans"
         android:textColor="#FFFFFF"
-        android:textSize="35sp" />
+        android:textSize="35sp"
+        android:transitionName="hola_trans" />
     <TextView
         android:id="@+id/welcome"
         android:layout_width="match_parent"
