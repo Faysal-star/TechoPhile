@@ -33,6 +33,7 @@ public class Ai_chat_window extends AppCompatActivity {
     AiMsgAdapter msgAdapter ;
     public static final MediaType JSON = MediaType.get("application/json");
     OkHttpClient client = new OkHttpClient();
+    private String API_KEY = BuildConfig.API_KEY;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +86,7 @@ public class Ai_chat_window extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonObject.toString(),JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/completions")
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer "+API_KEY)
                 .post(body)
                 .build();
         client.newCall(request).enqueue(new Callback() {
