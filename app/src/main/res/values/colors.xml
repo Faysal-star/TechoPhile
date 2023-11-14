@@ -8,5 +8,8 @@
     <color name="lightBlue">#2295f8</color>
     <color name="lightBlue2">#03A9F4</color>
     <color name="lightBlue3">#C2D9FF</color>
+    <color name="darkBlue">#010e1a</color>
+    <color name="gray">#d1d1d1</color>
+    <color name="trans">#00000000</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#10427b</color>
 </resources>
