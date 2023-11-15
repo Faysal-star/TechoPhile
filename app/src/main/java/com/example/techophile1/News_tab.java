@@ -41,7 +41,7 @@ public class News_tab extends Fragment {
         newsModArray = new ArrayList<>();
         newsAdapter = new NewsAdapter(getContext(),newsModArray);
         newsS.setAdapter(newsAdapter);
-//        callNews();
+        callNews();
         return view;
     }
 
