@@ -26,7 +26,7 @@ import java.util.Date;
 public class chat_page extends AppCompatActivity {
     String useriName, recUid, useriPic, senderUid;
     TextView receiverName ;
-    ImageView infoBtn,backBtn;
+    ImageView infoBtn;
     CardView sendBtn;
     EditText msgBox;
     FirebaseAuth mAuth;
@@ -48,7 +48,6 @@ public class chat_page extends AppCompatActivity {
         receiverName = findViewById(R.id.receiverName);
         sendBtn = findViewById(R.id.sendBtn);
         infoBtn = findViewById(R.id.infoBtn);
-        backBtn = findViewById(R.id.backBtn);
         msgBox = findViewById(R.id.msgBox);
         msgList = findViewById(R.id.msgList);
         msgModArray = new ArrayList<>();

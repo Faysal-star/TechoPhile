@@ -125,7 +125,7 @@
             app:boxStrokeColor="@color/lightBlue"
             app:boxStrokeWidthFocused="2dp"
             app:counterTextColor="@color/lightBlue2"
-            app:hintTextColor="@color/endColor">
+            app:hintTextColor="@color/lightBlue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
