@@ -70,6 +70,9 @@ public class Feed_tab extends Fragment {
                 postMods.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     PostMod postMod = dataSnapshot.getValue(PostMod.class);
+                    if(learn_teachArray == null){
+                        return;
+                    }
                     for(String s : learn_teachArray){
                         s = s.toUpperCase() ;
                         if(postMod.getTags().toUpperCase().contains(s)){

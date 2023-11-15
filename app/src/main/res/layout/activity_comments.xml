@@ -124,6 +124,7 @@
         android:orientation="horizontal"
         android:layout_marginBottom="15dp"
         android:layout_alignParentBottom="true"
+        android:background="@color/darkBlue"
         >
 
         <com.google.android.material.textfield.TextInputLayout
