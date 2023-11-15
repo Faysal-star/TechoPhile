@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -34,6 +35,7 @@ public class chat_page extends AppCompatActivity {
     String senderNode , recNode ;
     ArrayList<MsgMod> msgModArray ;
     MsgAdapter msgAdapter ;
+    private String total_convo = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,10 +74,16 @@ public class chat_page extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 msgModArray.clear();
+                total_convo = "";
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     MsgMod msgMod = dataSnapshot.getValue(MsgMod.class);
+                    // sender as student and receiver as teacher
+                    if(msgMod.getSenderId().equals(senderUid)){
+                        total_convo += "Student : " + msgMod.getMsg() + "\n";
+                    }else{
+                        total_convo += "Teacher : " + msgMod.getMsg() + "\n";
+                    }
                     msgModArray.add(msgMod);
-//                    Toast.makeText(chat_page.this, msgMod.getMsg(), Toast.LENGTH_SHORT).show();
                 }
                 msgAdapter.notifyDataSetChanged();
             }
@@ -108,6 +116,12 @@ public class chat_page extends AppCompatActivity {
                                     .push().setValue(msgMod).addOnCompleteListener(task1 -> {});
                         });
             }
+        });
+
+        infoBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(chat_page.this , Ai_analysis.class);
+            intent.putExtra("total_convo",total_convo);
+            startActivity(intent);
         });
     }
 }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue"
+    android:orientation="vertical"
+    tools:context=".Ai_analysis">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/aclonica"
+        android:textColor="@color/white"
+        android:background="@color/endColor"
+        android:gravity="center"
+        android:text="AI Analysis" />
+
+    <Button
+        android:id="@+id/aBtn"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#00000000"
+        android:fontFamily="@font/aclonica"
+        android:gravity="center"
+        android:textColor="@color/lightBlue2"
+        android:text="Analyze"
+        app:cornerRadius="7dp"
+        app:strokeColor="#2196F3"
+        app:strokeWidth="2dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/aAnalysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="Analysis"
+            android:textSize="15dp"/>
+    </ScrollView>
+
+
+</LinearLayout>

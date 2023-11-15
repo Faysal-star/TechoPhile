@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Chat"
     android:id="@+id/frag_chat"
-    android:background="#C2D9FF">
+    android:background="@color/darkBlue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,16 +38,17 @@
                 android:hint="Search..."
                 android:paddingVertical="0dp"
                 android:layout_marginHorizontal="0dp"
-                app:boxStrokeColor="@color/endColor"
+                app:boxStrokeColor="@color/lightBlue3"
                 app:boxStrokeWidthFocused="2dp"
                 app:counterTextColor="@color/lightBlue2"
-                app:hintTextColor="@color/endColor">
+                android:textColorHint="@color/lightBlue"
+                app:hintTextColor="@color/lightBlue">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:paddingVertical="0dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
             <ImageView
                 android:id="@+id/searchBtn"
@@ -58,7 +59,7 @@
                 android:layout_gravity="center"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="3dp"
-                app:tint="@color/startColor" />
+                app:tint="@color/lightBlue" />
         </LinearLayout>
 
         <LinearLayout

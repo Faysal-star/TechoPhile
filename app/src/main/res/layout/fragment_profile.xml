@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Profile"
     android:id="@+id/frag_profile"
-    android:background="#C2D9FF">
+    android:background="@color/darkBlue">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -101,16 +101,16 @@
             android:paddingTop="10dp"
             android:layout_marginTop="40dp"
             android:layout_marginHorizontal="10dp"
-            android:textColorHint="@color/endColor"
+            android:textColorHint="@color/lightBlue"
             app:boxStrokeColor="@color/lightBlue"
             app:boxStrokeWidthFocused="2dp"
             app:counterTextColor="@color/lightBlue2"
-            app:hintTextColor="@color/endColor">
+            app:hintTextColor="@color/lightBlue">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/learnings"
@@ -121,7 +121,7 @@
             android:paddingTop="10dp"
             android:layout_marginTop="25dp"
             android:layout_marginHorizontal="10dp"
-            android:textColorHint="@color/endColor"
+            android:textColorHint="@color/lightBlue"
             app:boxStrokeColor="@color/lightBlue"
             app:boxStrokeWidthFocused="2dp"
             app:counterTextColor="@color/lightBlue2"
@@ -130,7 +130,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/update"

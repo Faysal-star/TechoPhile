@@ -3,13 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBlue3"
+    android:background="@color/darkBlue"
     tools:context=".News_tab">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/aclonica"
+            android:text="Trending"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="55dp"
+            android:id="@+id/newsS" />
+
+    </LinearLayout>
 
 </FrameLayout>

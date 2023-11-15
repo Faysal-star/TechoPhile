@@ -1,6 +1,7 @@
 package com.example.techophile1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
@@ -19,7 +20,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -55,10 +58,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference().child("posts").child(postMod.getPostID());
         String postID = postMod.getPostID();
+
+        // postID to date
+        Date date = new Date(Long.parseLong(postID));
+        SimpleDateFormat df2 = new SimpleDateFormat("EEE dd MMM,yyyy HH:mm");
+        String dateText = df2.format(date);
+        holder.piTime.setText(dateText);
         holder.piCmnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(v.getContext(),Comments.class);
+                intent.putExtra("postID",postMod.getPostID());
+                v.getContext().startActivity(intent);
             }
         });
         holder.piLike.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +95,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     public class PostViewHolder extends RecyclerView.ViewHolder {
         ImageView piCmnt , piLike ;
         CircleImageView piImage;
-        TextView piText,piTags,piTitle,piName,piCnt;
+        TextView piText,piTags,piTitle,piName,piCnt,piTime;
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
             piCmnt = itemView.findViewById(R.id.piCmnt);
@@ -95,6 +106,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             piTitle = itemView.findViewById(R.id.piTitle);
             piName = itemView.findViewById(R.id.piName);
             piCnt = itemView.findViewById(R.id.piCnt);
+            piTime = itemView.findViewById(R.id.piTime);
         }
     }
 }

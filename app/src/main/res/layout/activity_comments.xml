@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue"
+    android:orientation="vertical"
+    tools:context=".Comments">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comment"
+            android:textSize="19sp"
+            android:fontFamily="@font/aclonica"
+            android:textColor="@color/white"
+            android:background="@color/endColor"
+            android:gravity="center"
+            android:paddingVertical="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="3dp"
+                    android:background="#353535">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginVertical="5dp"
+                            android:id="@+id/cpiImage"
+                            android:src="@drawable/pro_pc"
+                            app:civ_border_width="1dp"
+                            android:layout_marginEnd="10dp"
+                            app:civ_border_color="@color/lightBlue"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/cpiName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#fff"
+                                android:textSize="18sp"
+                                android:text="Name" />
+                            <TextView
+                                android:id="@+id/cpiTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#aaffffff"
+                                android:text="time"
+                                android:textSize="13sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/cpiTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/aladin"
+                        android:text="Title"
+                        android:textColor="#fff"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/cpiTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#aaffffff"
+                        android:text="tags"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/post_border">
+                <TextView
+                    android:id="@+id/cpiText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="......."
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cmRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginVertical="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cCmnt"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_weight=".9"
+            android:layout_height="50dp"
+            android:hint="Write Comment..."
+            android:paddingVertical="0dp"
+            android:layout_marginHorizontal="0dp"
+            app:boxStrokeColor="@color/lightBlue"
+            app:boxStrokeWidthFocused="2dp"
+            app:counterTextColor="@color/lightBlue2"
+            android:textColorHint="@color/lightBlue"
+            app:hintTextColor="@color/lightBlue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingVertical="0dp"
+                android:textColor="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/cSend"
+            android:layout_width="0dp"
+            android:layout_weight=".1"
+            android:layout_height="match_parent"
+            android:src="@drawable/telegram"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="3dp"
+            android:padding="5dp"
+            app:tint="@color/lightBlue" />
+    </LinearLayout>
+
+</RelativeLayout>

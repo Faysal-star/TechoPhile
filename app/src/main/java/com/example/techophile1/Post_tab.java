@@ -67,7 +67,7 @@ public class Post_tab extends Fragment {
                     pDescr.setError("Description is required");
                     return;
                 }
-//                PostMod(String title, String tags, String descr, String userId, String userName, String userImg, String likes, String postID)
+//                public PostMod(String title, String tags, String descr, String userId, String userName, String userImg, String likes, String postID, String comments)
                 PostMod postMod = new PostMod(title,tags,descr,UID,UserName,UserImg,"0",time);
                 database.getReference().child("posts").child(time).setValue(postMod).addOnCompleteListener(task -> {
                     if(task.isSuccessful()){
