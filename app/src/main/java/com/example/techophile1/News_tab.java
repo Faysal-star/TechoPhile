@@ -53,7 +53,7 @@ public class News_tab extends Fragment {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
@@ -71,6 +71,9 @@ public class News_tab extends Fragment {
                             String urlImg = jsonObject1.getString("urlToImage");
                             String date = jsonObject1.getString("publishedAt");
                             newsModArray.add(new NewsMod(title,desc,url,urlImg,date));
+                        }
+                        if(getActivity() == null){
+                            return;
                         }
                         getActivity().runOnUiThread(() -> newsAdapter.notifyDataSetChanged());
                     } catch (JSONException e) {

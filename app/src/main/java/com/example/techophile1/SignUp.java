@@ -34,7 +34,7 @@ import java.util.Locale;
 import de.hdodenhof.circleimageview.CircleImageView;
 import android.view.animation.AnimationUtils;
 
-public class SignUp extends AppCompatActivity {
+public class  SignUp extends AppCompatActivity {
     private TextInputEditText dobTxt ;
     private Animation top , right , bottom , left ;
     private TextInputLayout userName,email,dob,pass,rpass;
